@@ -16,7 +16,7 @@ date: string<br />
 description: string<br />
 user_id: integer<br />
 <br />
-A student has many events.<br />
-An event belongs to a student.<br />
+A <em>student</em> has many <em>events</em>.<br />
+An <em>event</em> belongs to a <em>student</em>.<br />
 <h3>Schema</h3>
 <img src="schema_whiteboard.jpg">
