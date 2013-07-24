@@ -25,7 +25,7 @@ def main():
     global session
 
 class Student(Base):
-    __tablename__ = "students"
+    __tablename__ = "Students"
 
     id = Column(Integer, primary_key=True)
     name = Column(String(64), nullable=True)
@@ -34,7 +34,7 @@ class Student(Base):
     hb_class = Column(String(140), nullable=True)
 
 class Event(Base):
-    __tablename__ = "events"
+    __tablename__ = "Events"
     # for each event, there is a title and description
         # events: college grad, first/second/third job(s), 
         # started learning to code, applied to HB, started HB,
