@@ -1,4 +1,5 @@
 <h2>Flaming Timeline Machine</h2>
+Derived from Hackbright's <a href="http://chriszf.github.io/ratings/">Ratings</a> webapp using SQLAlchemy, Flask and Python.<br />
 
 <h3>Tables</h3>
 <strong>Students</strong><br />
