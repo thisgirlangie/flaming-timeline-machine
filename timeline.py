@@ -8,6 +8,11 @@ app = Flask(__name__)
 def index():
     return "Hello World!"
 
+@app.route("/students")
+def display_students():
+    student_list = session.query(Student).limit(15).all()
+    return render_template ("students.html", students=student_list)
+
 @app.route("/add-student")
 def display_add_student_form():
     html = render_template("add_student.html")

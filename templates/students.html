@@ -1,0 +1,8 @@
+<html>
+<body>
+    <h1>Students</h1>
+{% for student in students %}
+<img src="{{ student.headshot_img_url }}" style="height:100px; margin:0px 15px 5px 0; padding:0px;" align="left"><h2 style="margin-bottom:0px; padding-bottom:0px;">{{ student.name }}</h2> <h2 style="margin-top:0px; padding-top:0px;">({{ student.title_company }})</h2>Hackbright Academy graduate - class of {{ student.hb_class }}<br /><br /><small><em>Location in database: student table id #{{ student.id }}</em></small>
+{% endfor %}
+</body>
+</html>
