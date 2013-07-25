@@ -7,9 +7,13 @@ from sqlalchemy.orm import backref, relationship
 from sqlalchemy import Table, MetaData, join
 from sqlalchemy.orm import mapper
 
+engine = create_engine("sqlite:///timelines.db", echo=False)
+session = scoped_session(sessionmaker(bind=engine, autocommit = False, autoflush = False))
+
 metadata = MetaData()
 
 Base = declarative_base()
+Base.query = session.query_property()
 
 def connect():
     global ENGINE
