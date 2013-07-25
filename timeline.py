@@ -1,6 +1,5 @@
 from flask import Flask, render_template, redirect, request, session
-from model import Student, session
-import model
+from model import Student, Event, session
 
 app = Flask(__name__)
 
@@ -28,6 +27,23 @@ def add_student_create():
     session.add(s)
     session.commit()
     return "Succesfully added student!!"
+
+@app.route("/add-event")
+def display_add_event_form():
+    html = render_template("add_event.html")
+    return html
+
+
+@app.route("/add-event-create")
+def add_event_create():
+    title = request.args.get("title")
+    date = request.args.get("date")
+    description = request.args.get("description")
+    user_id = request.args.get("user_id")
+    e = Event(title=title, date=date, description=description, user_id=user_id)
+    session.add(e)
+    session.commit()
+    return "Succesfully added event for student!!"    
 
 if __name__ == "__main__":
     app.run(debug = True)
