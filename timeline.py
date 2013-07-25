@@ -32,7 +32,7 @@ def add_student_create():
 def display_events():
     events_list = session.query(Event).limit(15).all()
     return render_template("events.html", events=events_list)
-
+    
 @app.route("/add-event")
 def display_add_event_form():
     html = render_template("add_event.html")
