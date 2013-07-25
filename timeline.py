@@ -10,7 +10,7 @@ def index():
 @app.route("/students")
 def display_students():
     student_list = session.query(Student).limit(15).all()
-    return render_template ("students.html", students=student_list)
+    return render_template("students.html", students=student_list)
 
 @app.route("/add-student")
 def display_add_student_form():
@@ -28,11 +28,15 @@ def add_student_create():
     session.commit()
     return "Succesfully added student!!"
 
+@app.route("/events")
+def display_events():
+    events_list = session.query(Event).limit(15).all()
+    return render_template("events.html", events=events_list)
+
 @app.route("/add-event")
 def display_add_event_form():
     html = render_template("add_event.html")
     return html
-
 
 @app.route("/add-event-create")
 def add_event_create():

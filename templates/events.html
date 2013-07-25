@@ -1,0 +1,11 @@
+<html>
+<header>
+    <title>Events</title>
+</header>
+<body>
+    <h1>Events</h1>
+{% for event in events %}
+<h2 style="margin-bottom:0px; padding-bottom:0px;">{{ event.user_id }} {{ event.title }}</h2> <small><em>{{ event.description}} </em></small>
+{% endfor %}
+</body>
+</html>
