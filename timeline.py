@@ -55,5 +55,21 @@ def add_event_create():
     session.commit()
     return "Succesfully added event for student!!"    
 
+@app.route("/edit-event")
+def display_edit_event_form():
+    html = render_template("edit_event.html")
+    return html
+
+@app.route("/edit-event-now")
+def edit_event():
+    title = request.args.get("title")
+    date = request.args.get("date")
+    description = request.args.get("description")
+    user_id = request.args.get("user_id")
+    e = Event(title=title, date=date, description=description, user_id=user_id)
+    session.add(e)
+    session.commit()
+    return 
+
 if __name__ == "__main__":
     app.run(debug = True)
