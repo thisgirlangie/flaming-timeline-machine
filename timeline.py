@@ -68,14 +68,14 @@ def display_edit_event_form():
 
 @app.route("/edit-event-now")
 def edit_event():
+    id = request.args.get("id")
     title = request.args.get("title")
     date = request.args.get("date")
     description = request.args.get("description")
     user_id = request.args.get("user_id")
-    e = Event(title=title, date=date, description=description, user_id=user_id)
-    session.add(e)
+    session.query(Event).update({event.title:title, event.date:date, event.description:description, event.user_id:user_id})
     session.commit()
-    return 
+    print "done"
 
 if __name__ == "__main__":
     app.run(debug = True)
