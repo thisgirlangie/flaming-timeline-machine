@@ -1,19 +1,24 @@
 <html>
-<header>
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
     <title>Add an Event</title>
-</header>
+</head>
 <body>
-<h1>Add an Event</h1>
+<h1>Add an Event to your Timeline</h1>
     <form action="/add-event-create">
-        <label for="title">Title of Event: (ie. Graduated College)</label>
+        <label for="title">Event: </label>
         <input type="text" name="title" /><br/><br/>
-        <label for="date">Date (ie. Spring 2004): </label>
+        <span class="label_desc">(ie. Graduated UC Berkeley with an English degree, First job as Deloitte accountant, Attended Hackbright Academy...)</span><br/><br/>
+        <label for="date">Date: </label>
         <input type="text" name="date" /><br/><br/> 
-        <label for="description">Description (ie. In college, I studied...)</label>
+        <span class="label_desc">(ie. Spring 2000, Summer 2013)</span><br/><br/>
+        <label for="description">Description </label>
         <input type="text" name="description" /><br/><br/> 
-        <label for="user_id">Student ID #: (ie. to link event to student)</label>
+        <span class="label_desc">Please enter a paragraph or two describing what happened.</span><br/><br/>
+        <label for="user_id">Your Student ID #: </label>
         <input type="text" name="user_id" /><br/><br/> 
-        <input type="submit">
+        <span class="label_desc">(We will use this to link event back to your profile)</span><br/><br/>
+        <input type="submit" value="Add this to my timeline!">
     </form>
 </div>
 </body>

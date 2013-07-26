@@ -1,0 +1,13 @@
+.img-circle {
+    border-radius: 500px 500px 500px 500px;
+    width: 200px;
+    height: 200px;
+    margin: 5px 20px 15px 0px;
+    padding: 0px;
+}
+
+.label_desc {
+    font-size:12px;
+    font-style:italic;
+    font-weight:lighter;
+}
