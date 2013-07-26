@@ -6,7 +6,7 @@
 <body style="text-align:center;">
 <small><em>Location in database: student table id #{{ student.id }}</em></small>
 <h1>Student Life</h1>
-<img src="{{ student.headshot_img_url }}" class="img-circle">
+<img src="{{ student.headshot_img_url }}" class="circle-how do img">
 <h2 style="margin-bottom:0px; padding-bottom:0px;">{{ student.name }}</h2>
 <h2 style="margin-top:0px; padding-top:0px;">({{ student.title_company }})</h2>
 Hackbright Academy graduate - class of {{ student.hb_class }}<br />
@@ -18,7 +18,7 @@ Hackbright Academy graduate - class of {{ student.hb_class }}<br />
 <div class="event_desc">
     <h2>{{ event.title }} ({{ event.date }})</h2>
 {{ event.description }}<br clear="all"><br/>
-    <div class="label_desc">You can: <a href="/edit-event?id={{ event.id }}">Edit Event</a> | <a href="/delete-event?id={{ event.id }}">Delete Event</a></div>
+    <div class="label_desc">You can: <a href="/edit-event?id={{ event.id }}&title={{ event.title }}&date={{ event.date }}&description={{ event.description }}">Edit Event</a> | <a href="/delete-event?id={{ event.id }}">Delete Event</a></div>
 </div><hr size="1">
 {% endfor %}
 
