@@ -47,8 +47,6 @@ class Event(Base):
     description = Column(String(1000), nullable=True) # ie. Best day of my life
     user_id = Column(Integer, ForeignKey('students.id')) # Forgot to rename this item to student_id
 
-
-
     # for each event, there is a title and description
         # events: college grad, first/second/third job(s), 
         # started learning to code, applied to HB, started HB,

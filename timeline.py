@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, request, session
 from model import Student, Event, session
+from sqlalchemy import update
 
 app = Flask(__name__)
 
@@ -69,13 +70,14 @@ def display_edit_event_form():
 @app.route("/edit-event-now")
 def edit_event():
     id = request.args.get("id")
-    title = request.args.get("title")
-    date = request.args.get("date")
-    description = request.args.get("description")
-    user_id = request.args.get("user_id")
-    session.query(Event).update({event.title:title, event.date:date, event.description:description, event.user_id:user_id})
+    new_title = request.args.get("title")
+    new_date = request.args.get("date")
+    new_description = request.args.get("description")
+    new_user_id = request.args.get("user_id")
+    e = Event(id=id, title=new_title, date=new_date, description=new_description, user_id=new_user_id)
+    session.add(e)
     session.commit()
-    print "done"
+    print "Done"
 
 if __name__ == "__main__":
     app.run(debug = True)
