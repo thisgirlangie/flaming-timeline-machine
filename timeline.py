@@ -7,6 +7,12 @@ app = Flask(__name__)
 def index():
     return "Hello World!"
 
+@app.route("/student-life")
+def display_students_events():
+    user_id = request.args.get("id")
+    student_id = session.query(Student).get(user_id)
+    return render_template("student_life.html", student_id=student_id)
+
 @app.route("/students")
 def display_students():
     student_list = session.query(Student).limit(15).all()

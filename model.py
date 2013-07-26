@@ -36,6 +36,8 @@ class Student(Base):
     title_company = Column(String(250), nullable=True)
     hb_class = Column(String(140), nullable=True)
 
+    events = relationship("Event", backref=backref("students", order_by=id))
+
 class Event(Base):
     __tablename__ = "events"
 
@@ -43,7 +45,9 @@ class Event(Base):
     title = Column(String(140), nullable=True) # ie. Graduated HB
     date = Column(String(140), nullable=True) # ie. Spring 2012
     description = Column(String(1000), nullable=True) # ie. Best day of my life
-    user_id = Column(Integer, nullable=True) # Forgot to rename this item to student_id
+    user_id = Column(Integer, ForeignKey('students.id')) # Forgot to rename this item to student_id
+
+
 
     # for each event, there is a title and description
         # events: college grad, first/second/third job(s), 
