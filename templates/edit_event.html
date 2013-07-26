@@ -7,16 +7,16 @@
 <h1>Edit an Event in your Timeline</h1>
     <form action="/edit-event-now">
         <label for="title">Event: </label>
-        <input type="text" name="title" /><br/><br/>
+        <input type="text" name="title" value="{{ event.title }}" id="title" /><br/><br/>
         <span class="label_desc">(ie. Graduated UC Berkeley with an English degree, First job as Deloitte accountant, Attended Hackbright Academy...)</span><br/><br/>
         <label for="date">Date: </label>
-        <input type="text" name="date" /><br/><br/> 
+        <input type="text" name="date" value="{{ event.date }}" id="date" /><br/><br/> 
         <span class="label_desc">(ie. Spring 2000, Summer 2013)</span><br/><br/>
         <label for="description">Description </label>
-        <input type="text" name="description" /><br/><br/> 
+        <input type="text" name="description" value="{{ event.description }}" id="description" /><br/><br/> 
         <span class="label_desc">Please enter a paragraph or two describing what happened.</span><br/><br/>
         <label for="user_id">Your Student ID #: </label>
-        <input type="text" name="user_id" /><br/><br/> 
+        <input type="text" name="user_id" value="{{ event.user_id }}" id="id" /><br/><br/> 
         <span class="label_desc">(We will use this to link event back to your profile)</span><br/><br/>
         <input type="submit" value="Update my event in my timeline!">
     </form>

@@ -57,7 +57,13 @@ def add_event_create():
 
 @app.route("/edit-event")
 def display_edit_event_form():
-    html = render_template("edit_event.html")
+    id = request.args.get("id")
+    title = request.args.get("title")
+    date = request.args.get("date")
+    description = request.args.get("description")
+    user_id = request.args.get("user_id")
+    event_id = session.query(Event).get(id)
+    html = render_template("edit_event.html", event=event_id)
     return html
 
 @app.route("/edit-event-now")
