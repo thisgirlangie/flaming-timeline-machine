@@ -79,5 +79,14 @@ def edit_event():
     session.commit()
     return redirect("/student-life?id=" + user_id)
 
+@app.route("/delete-event")
+def delete_event():
+    id = request.args.get("id") # event ID
+    user_id = request.args.get("user_id")
+    e = session.query(Event).get(id)
+    session.delete(e)
+    session.commit()
+    return redirect("/student-life?id=" + user_id)
+
 if __name__ == "__main__":
     app.run(debug = True)

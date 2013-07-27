@@ -1,0 +1,16 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <title>Are you sure???</title>
+</head>
+<body>
+<h1>Are you sure you want to delete this?</h1>
+    <form action="/delete-event-now">
+        <div style="display:none;"><label for="id">ID: </label> 
+        <input type="text" name="id" id="id" value="{{ event.id }}" /><br/><br/></div>
+        If you are SURE you want to delete this event, click on the button below:<br/><br/>
+        <input type="submit" value="Delete event">
+    </form>
+</div>
+</body>
+</html>
