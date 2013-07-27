@@ -18,7 +18,7 @@ Hackbright Academy graduate - class of {{ student.hb_class }}<br />
 <div class="event_desc">
     <h2>{{ event.title }} ({{ event.date }})</h2>
 {{ event.description }}<br clear="all"><br/>
-    <div class="label_desc">You can: <a href="/edit-event?id={{ event.id }}&title={{ event.title }}&date={{ event.date }}&description={{ event.description }}">Edit Event</a> | <a href="/delete-event?id={{ event.id }}&user_id={{ student.id }}">Delete Event</a></div>
+    <div class="label_desc">Since this is your profile, you have the power to <a href="/edit-event?id={{ event.id }}&title={{ event.title }}&date={{ event.date }}&description={{ event.description }}">edit this event</a> or <a href="/delete-event?id={{ event.id }}&user_id={{ student.id }}">delete it instantly</a>.</div>
 </div><hr size="1">
 {% endfor %}
 
