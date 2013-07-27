@@ -77,7 +77,7 @@ def edit_event():
     user_id = request.args.get("user_id")
     new_event.user_id = user_id[0:1] # removing the pesky tuple that appeared in the ForeignKey
     session.commit()
-    return render_template("student_life.html", student=new_event.user_id)
+    return redirect("/student-life?id=" + user_id)
 
 if __name__ == "__main__":
     app.run(debug = True)
