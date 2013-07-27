@@ -90,5 +90,10 @@ def delete_event():
     session.commit()
     return redirect("/student-life?id=" + user_id)
 
+@app.route("login")
+def user_login():
+    email = request.args.get("email")
+    password = request.args.get("password")
+
 if __name__ == "__main__":
     app.run(debug = True)
