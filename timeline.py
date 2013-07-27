@@ -27,10 +27,12 @@ def display_add_student_form():
 @app.route("/add-student-create")
 def add_student_create():
     name = request.args.get("name")
+    email = request.args.get("email")
+    password = request.args.get("password")
     title_company = request.args.get("title_company")
     hb_class = request.args.get("hb_class")
     headshot_img_url = request.args.get("headshot_img_url")
-    s = Student(name=name, title_company=title_company, hb_class=hb_class, headshot_img_url=headshot_img_url)
+    s = Student(name=name, email=email, password=password, title_company=title_company, hb_class=hb_class, headshot_img_url=headshot_img_url)
     session.add(s)
     session.commit()
     return "Succesfully added student!!"

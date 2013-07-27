@@ -32,6 +32,8 @@ class Student(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String(64), nullable=True)
+    email = Column(String(64), nullable=True)
+    password = Column(String(64), nullable=True)
     headshot_img_url = Column(String(250), nullable=True)
     title_company = Column(String(250), nullable=True)
     hb_class = Column(String(140), nullable=True)
